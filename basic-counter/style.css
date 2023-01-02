@@ -1,0 +1,43 @@
+
+*{
+    background-color: rgb(152, 222, 250);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+#app{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15%;
+}
+
+
+.content{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+button{
+
+    border-radius: 5px;
+    background-color: rgb(182, 240, 248);
+    padding: 5px;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover{
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+p{
+    text-align: center;
+    font-size: 50px;
+    
+}
+
