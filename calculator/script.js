@@ -3,6 +3,8 @@ const app = Vue.createApp({
     return {
       numbers: [],
 
+      display: '',
+
       resultValue: 0,
 
       operation: "",
@@ -13,7 +15,12 @@ const app = Vue.createApp({
 
   methods: {
     addnumber: (number) => {
-      this.numbers.push(number);
+      if (this.numbers !== undefined && this.numbers instanceof Array) {
+        
+        this.numbers.push(number);
+      }
+
+      this.display = this.numbers.join('');
     },
 
     selectOp: (operation) => {
@@ -30,7 +37,7 @@ const app = Vue.createApp({
 
       this.resultValue = result;
     },
-    sub: () => {
+    soma: () => {
       let result = 0;
 
       for (let i = 0; i < this.numbers.lenght; i++) {
@@ -67,7 +74,7 @@ const app = Vue.createApp({
       this.numbers = [];
       this.operation = "";
       this.resultValue = 0;
-      this.errorMessage = "";
+      this.error = "";
     },
     del: () => {
       this.error = "";
@@ -76,15 +83,15 @@ const app = Vue.createApp({
 
     calculateResult: () => {
       if (this.operation === "add") {
-        this.add();
+        this.soma();
       } else if (this.operation === "subtract") {
-        this.subtract();
+        this.sub();
       } else if (this.operation === "multiply") {
-        this.multiply();
+        this.mult();
       } else if (this.operation === "divide") {
-        this.divide();
+        this.divid();
       } else {
-        this.errorMessage = "Selecione uma operação";
+        this.error = "Selecione uma operação";
       }
     },
   },

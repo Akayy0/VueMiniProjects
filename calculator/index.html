@@ -13,37 +13,36 @@
   </head>
   <body>
     <div id="app">
-      <div class="display" v-if="resultValue">{{resultValue}}</div>
-      <div class="display" v-else>{{numbers.join('')}} {{operation}}</div>
+      <div class="display"><p>{{display}}</p></div>
 
       <div class="calculator buttons">
         <table>
           <tr>
             <td><button @click="clear">C</button></td>
-            <td><button @click="selectOperation('divide')">/</button></td>
-            <td><button @click="selectOperation('multiply')">*</button></td>
+            <td><button @click="selectOp('divide')">/</button></td>
+            <td><button @click="selectOp('multiply')">*</button></td>
             <td><button @click="del"><</button></td>
           </tr>
           <tr>
-            <td><button @click="addNumber(7)">7</button></td>
-            <td><button @click="addNumber(8)">8</button></td>
-            <td><button @click="addNumber(9)">9</button></td>
-            <td><button @click="selectOperation('subtract')">-</button></td>
+            <td><button @click="addnumber(7)">7</button></td>
+            <td><button @click="addnumber(8)">8</button></td>
+            <td><button @click="addnumber(9)">9</button></td>
+            <td><button @click="selectOp('subtract')">-</button></td>
           </tr>
           <tr>
-            <td><button @click="addNumber(4)">4</button></td>
-            <td><button @click="addNumber(5)">5</button></td>
-            <td><button @click="addNumber(6)">6</button></td>
-            <td><button @click="selectOperation('add')">+</button></td>
+            <td><button @click="addnumber(4)">4</button></td>
+            <td><button @click="addnumber(5)">5</button></td>
+            <td><button @click="addnumber(6)">6</button></td>
+            <td><button @click="selectOp('soma')">+</button></td>
           </tr>
           <tr>
-            <td><button @click="addNumber(1)">1</button></td>
-            <td><button @click="addNumber(2)">2</button></td>
-            <td><button @click="addNumber(3)">3</button></td>
+            <td><button @click="addnumber(1)">1</button></td>
+            <td><button @click="addnumber(2)">2</button></td>
+            <td><button @click="addnumber(3)">3</button></td>
             <td><button @click="calculateResult">=</button></td>
           </tr>
           <tr>
-            <td><button @click="addNumber(0)">0</button></td>
+            <td><button @click="addnumber(0)">0</button></td>
             <td><button></button></td>
             <td><button></button></td>
             <td><button></button></td>
