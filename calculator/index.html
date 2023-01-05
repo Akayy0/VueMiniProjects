@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="display" v-if="resultValue">{{resultValue}}</div>
+      <div class="display" v-else>{{numbers.join('')}} {{operation}}</div>
+
+      <div class="calculator buttons">
+        <table>
+          <tr>
+            <td><button @click="clear">C</button></td>
+            <td><button @click="selectOperation('divide')">/</button></td>
+            <td><button @click="selectOperation('multiply')">*</button></td>
+            <td><button @click="del"><</button></td>
+          </tr>
+          <tr>
+            <td><button @click="addNumber(7)">7</button></td>
+            <td><button @click="addNumber(8)">8</button></td>
+            <td><button @click="addNumber(9)">9</button></td>
+            <td><button @click="selectOperation('subtract')">-</button></td>
+          </tr>
+          <tr>
+            <td><button @click="addNumber(4)">4</button></td>
+            <td><button @click="addNumber(5)">5</button></td>
+            <td><button @click="addNumber(6)">6</button></td>
+            <td><button @click="selectOperation('add')">+</button></td>
+          </tr>
+          <tr>
+            <td><button @click="addNumber(1)">1</button></td>
+            <td><button @click="addNumber(2)">2</button></td>
+            <td><button @click="addNumber(3)">3</button></td>
+            <td><button @click="calculateResult">=</button></td>
+          </tr>
+          <tr>
+            <td><button @click="addNumber(0)">0</button></td>
+            <td><button></button></td>
+            <td><button></button></td>
+            <td><button></button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

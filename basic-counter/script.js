@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             number: 0,
-            id : 0
+            id : 0,
         }
     },
 
@@ -19,6 +19,12 @@ const app = Vue.createApp({
         }
         
     },
+
+    watch: {
+        number(novoNumero){
+            console.log(`O novo numero e ${novoNumero}`)
+        }
+    }
 })
 
 app.mount("#app")

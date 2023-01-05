@@ -28,4 +28,5 @@ const app = Vue.createApp({
       this.todos = this.todos.filter((t) => t !== todo);
     },
   },
+
 }).mount("#app");
